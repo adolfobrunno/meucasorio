@@ -28,6 +28,25 @@
 }
 
 /**
+* Putting placeholder centered
+*/
+::-webkit-input-placeholder {
+   text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-align: center;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;
+}
+
+:-ms-input-placeholder {
+   text-align: center;
+}
+
+/**
  * App-wide Styles
  */
 
@@ -41,4 +60,28 @@
 .section-title {
     text-transform: uppercase;
     font-size: 19px
+}
+
+form{
+    padding-top: 30px
+}
+
+.col-md-1,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-md-10,
+.col-md-11,
+.col-md-12{
+    padding-bottom: 20px;
+}
+
+.help-block{
+    font-size: 11px;
+    text-align: center;
 }

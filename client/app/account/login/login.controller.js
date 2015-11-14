@@ -16,7 +16,7 @@ angular.module('meucasorioApp')
         .then( function(user) {
           // Logged in, redirect to home
           console.log(Auth.getCurrentUser())
-          $location.path('/home/novo');
+          $location.path('/novo');
         })
         .catch( function(err) {
           $scope.errors.other = err.message;
