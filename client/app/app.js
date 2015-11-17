@@ -5,8 +5,8 @@ angular.module('meucasorioApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'ui.bootstrap'
-])
+  'ui.bootstrap', 'ngMask', 'mgo-angular-wizard', 'ngDialog'
+ ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
       .otherwise({

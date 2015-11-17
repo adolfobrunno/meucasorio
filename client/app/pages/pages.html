@@ -1,3 +1,6 @@
-<div class="col-md-12">
-Sua página customizada
+<div class="col-md-12" ng-show="marriage">
+    Sua página customizada, {{marriage.groom.name}}
+</div>
+<div class="col-md-12" ng-show="!marriage">
+    Error
 </div>

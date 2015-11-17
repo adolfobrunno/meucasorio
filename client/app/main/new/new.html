@@ -1,45 +1,142 @@
-<div class="col-md-12">
+<div class="centered-form">
 
-    <h1 class="section-title text-center">Informe seus dados</h1>
 
-    <div class="centered-form">
+<wizard on-finish="register(marriage)" hide-indicators="true">
+    <wz-step title="Identificação">
+        <h1 class="section-title text-center">Quem é você?</h1>
+        <div class="wiz-content">
+            <div class="col-md-3 col-md-offset-2">
+                <a href="" wz-next ng-click="setUser('bride')"><img src="assets/images/bride.png" alt="Noiva" class="img-circle img-responsive center-block"></a>
+            </div>
+            <div class="col-md-3 col-md-offset-2">
+                <a href="" wz-next ng-click="setUser('groom')"><img src="assets/images/groom.png" alt="Noivo" class="img-circle img-responsive center-block"></a>
+            </div>
+        </div>
+    </wz-step>
+    <wz-step title="Dados dos noivos">
+        <h1 class="section-title text-center">Dados dos noivos</h1>
+        <div class="wiz-content">
+            <div class="col-md-3 arrow">
+                <a href=""  wz-previous><img src="assets/images/back-arrow.png" alt="Voltar"></a>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group ">
+                      <div class="col-md-12 ">
+                          <input type="text" class="form-control input-lg" ng-model="marriage.groom.name" placeholder="Nome do noivo">
+                      </div>
+                </div>
+                <div class="form-group ">
+                      <div class="col-md-12">
+                          <input type="text" class="form-control input-lg" ng-model="marriage.groom.email" placeholder="Email do noivo">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <div class="col-md-12">
+                          <input type="text" class="form-control input-lg" ng-model="marriage.bride.name" placeholder="Nome da noiva">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <div class="col-md-12">
+                          <input type="text" class="form-control input-lg" ng-model="marriage.bride.email" placeholder="Email da noiva">
+                      </div>
+                  </div>
+            </div>
+        </div>
+        <div class="col-md-3 arrow">
+                <a href=""  wz-next><img src="assets/images/next-arrow.png" alt="Avançar"></a>
+            </div>
 
-        <form role="form" class="horizontal-form">
+    </wz-step>
+    <wz-step title="Dados do evento">
+        <h1 class="section-title text-center">Dados do evento</h1>
+        <div class="wiz-content">
+            <div class="col-md-3 arrow">
+                <a href=""  wz-previous><img src="assets/images/back-arrow.png" alt="Voltar"></a>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                  <div class="col-md-12">
+                      <input type="text" class="form-control input-lg" ng-model="marriage.domain" lowercase placeholder="Domínio do seu site">
+                      <span id="helpBlock" class="help-block">Seu site será: www.meucasorio.com.br/pages/{{marriage.domain}}</span>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <div class="col-md-12">
+                      <input type="text" class="form-control input-lg" ng-model="marriage.when" mask="39/19/2999"
+                              placeholder="Data do evento">
+                  </div>
+              <div class="form-group">
+                  <div class="col-md-12">
+                      <input type="text" class="form-control input-lg" ng-model="marriage.city" placeholder="Cidade">
+                  </div>
+              </div>
+              <div class="form-group">
+                  <div class="col-md-12">
+                      <input type="text" class="form-control input-lg" ng-model="marriage.where" placeholder="Local">
+                  </div>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-3 arrow">
+            <button class="btn btn-lg btn-block btn-primary" wz-finish>Cadastrar!</button>
+        </div>
 
-                <div class="form-group">
-                    <div class="col-md-6 col-md-offset-3">
-                        <input type="text" class="form-control input-lg" ng-model="noivo" placeholder="Nome do noivo">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-6 col-md-offset-3">
-                        <input type="text" class="form-control input-lg" ng-model="email_noivo" placeholder="Email do noivo">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-6 col-md-offset-3">
-                        <input type="text" class="form-control input-lg" ng-model="noiva" placeholder="Nome da noiva">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-6 col-md-offset-3">
-                        <input type="text" class="form-control input-lg" ng-model="email_noiva" placeholder="Email da noiva">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-6 col-md-offset-3">
-                        <input type="text" class="form-control input-lg" ng-model="dominio" lowercase placeholder="Domínio do seu site">
-                        <span id="helpBlock" class="help-block">Seu site será: www.meucasorio.com.br/pages/{{dominio}}</span>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-6 col-md-offset-3">
-                        <input type="text" class="form-control input-lg" ng-model="data" datepicker-popup
-                                placeholder="Data do evento">
-                    </div>
-                </div>
+    </wz-step>
+</wizard>
 
-        </form>
-    </div>
+
+
+  <!--   <h1 class="section-title text-center">Informe seus dados</h1>
+
+  <div class="centered-form">
+
+      <form role="form" class="horizontal-form">
+
+              <div class="form-group col-md-12">
+                  <div class="col-md-6">
+                      <input type="text" class="form-control input-lg" ng-model="marriage.groom.name" placeholder="Nome do noivo">
+                  </div>
+                  <div class="col-md-6">
+                      <input type="text" class="form-control input-lg" ng-model="marriage.groom.email" placeholder="Email do noivo">
+                  </div>
+              </div>
+              <div class="form-group col-md-12">
+                  <div class="col-md-6">
+                      <input type="text" class="form-control input-lg" ng-model="marriage.bride.name" placeholder="Nome da noiva">
+                  </div>
+                  <div class="col-md-6">
+                      <input type="text" class="form-control input-lg" ng-model="marriage.bride.email" placeholder="Email da noiva">
+                  </div>
+              </div>
+              <div class="form-group">
+                  <div class="col-md-6 col-md-offset-3">
+                      <input type="text" class="form-control input-lg" ng-model="marriage.domain" lowercase placeholder="Domínio do seu site">
+                      <span id="helpBlock" class="help-block">Seu site será: www.meucasorio.com.br/pages/{{marriage.domain}}</span>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <div class="col-md-6 col-md-offset-3">
+                      <input type="text" class="form-control input-lg" ng-model="marriage.when" mask="39/19/2999"
+                              placeholder="Data do evento">
+                  </div>
+              <div class="form-group">
+                  <div class="col-md-6 col-md-offset-3">
+                      <input type="text" class="form-control input-lg" ng-model="marriage.city" placeholder="Cidade">
+                  </div>
+              </div>
+              <div class="form-group">
+                  <div class="col-md-6 col-md-offset-3">
+                      <input type="text" class="form-control input-lg" ng-model="marriage.where" placeholder="Local">
+                  </div>
+              </div>
+              <div class="form-group">
+                  <div class="col-md-6 col-md-offset-3 text-center">
+                      <button class="btn btn-lg btn-block btn-primary" ng-click="register()">Cadastrar!</button>
+                  </div>
+              </div>
+
+
+      </form>
+  </div> -->
 
 </div>

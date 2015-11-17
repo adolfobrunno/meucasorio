@@ -85,3 +85,7 @@ form{
     font-size: 11px;
     text-align: center;
 }
+
+input[type="text"]{
+    text-align: center;
+}
